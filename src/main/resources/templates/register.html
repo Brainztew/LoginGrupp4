@@ -6,6 +6,25 @@
     <title>Registrera</title>
 </head>
 <body>
-    
+    <h1>Registrera ny användare!</h1>
+    <form method="post" th:object="${user}" th:action="@{register/addUser}">
+ 
+        <label for="firstname">förnamn:</label>
+        <input type="text" id="firstname" name="firstname"  required><br>
+
+        <label for="lastname">efternamn:</label>
+        <input type="text" id="lastname" name="lastname"  required><br>
+
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email"  required><br>
+
+        <label for="username">användarnamn:</label>
+        <input type="text" id="username" name="username"  required><br>
+
+        <label for="password">lösenord:</label>
+        <input type="text" id="password" name="password"  required><br>
+
+        <button type="submit">Lägg till användare</button>
+    </form>
 </body>
 </html>
