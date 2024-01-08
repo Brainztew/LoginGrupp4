@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Produktsida!</h1>
-    <p>TEST!</p>
-    
-</body>
+  </head>
+  <body>
+    <h1>Startsidan</h1>
+    <div>
+      <a href="">
+        <button>Logga in</button>
+      </a>
+      <a href="register">
+        <button>Registrera</button>
+      </a>
+
+      <a href="orders">
+        <button>Kundvagn</button>
+      </a>
+    </div>
+    <div th:each="product : ${products}">
+      <h2 th:text="${product.name}"></h2>
+      <img th:src="${product.image}" width="200" />
+      <h3>Beskrivning</h3>
+      <p th:text="${product.description}"></p>
+      <h3>Pris</h3>
+      <p th:text="${product.price}"></p>
+      <a href="details">
+        <button>More Details</button>
+      </a>
+    </div>
+  </body>
 </html>
