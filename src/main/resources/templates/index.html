@@ -8,7 +8,7 @@
   <body>
     <h1>Startsidan</h1>
     <div>
-      <a href="">
+      <a th:href="@{/login}">
         <button>Logga in</button>
       </a>
       <a href="register">
@@ -22,8 +22,6 @@
     <div th:each="product : ${products}">
       <h2 th:text="${product.name}"></h2>
       <img th:src="${product.image}" width="200" />
-      <h3>Beskrivning</h3>
-      <p th:text="${product.description}"></p>
       <h3>Pris</h3>
       <p th:text="${product.price}"></p>
       <a th:href="@{/details(productId=${product.id})}">
