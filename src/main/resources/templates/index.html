@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -19,16 +20,17 @@
         <button>Kundvagn</button>
       </a>
     </div>
-    <div th:each="product : ${products}">
-      <h2 th:text="${product.name}"></h2>
-      <img th:src="${product.image}" width="200" />
-      <h3>Beskrivning</h3>
-      <p th:text="${product.description}"></p>
-      <h3>Pris</h3>
-      <p th:text="${product.price}"></p>
-      <a th:href="@{/details(productId=${product.id})}">
-        <button>More Details</button>
-      </a>
+    <div id="productContainer">
+      <div th:each="product : ${products}" class="container">
+        <h2 th:text="${product.name}"></h2>
+        <br />
+        <img th:src="${product.image}" width="200" />
+        <h3>Pris</h3>
+        <p th:text="${product.price}"></p>
+        <a th:href="@{/details(productId=${product.id})}">
+          <button>Mer Information</button>
+        </a>
+      </div>
     </div>
   </body>
 </html>

@@ -1,25 +1,35 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #loginBar {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: left;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
 }
 
 #product {
-    display: flex;
+  display: flex;
 }
 
 #product img {
-    width: 700px;
-    height: 500px;
-    margin-right: 20px; 
+  width: 700px;
+  height: 500px;
+  margin-right: 20px;
 }
 
 #productDescription {
-    text-align: right;
-    max-width: 300px; 
+  text-align: right;
+  max-width: 300px;
+}
+
+#productContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.container {
+  border: 1px solid;
 }
