@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#loginBar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: left;
+}
+
+#product {
+    display: flex;
+}
+
+#product img {
+    width: 500px;
+    height: 600px;
+    margin-right: 20px; 
+}
+
+#productDescription {
+    text-align: right;
+    max-width: 300px; 
+}

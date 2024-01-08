@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beskrivning</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="loginBar">
+        <button id="loginBtn">Logga in</button>
+        <button id="registerBtn">Registrera</button>
+        <button id="cartBtn">Kundvagn</button>
+        <button id="homeBtn">Hem</button>
+    </div>
+    <div id="product">
+        <img th:src="${product.image}" alt="Product Image">
+        <p id="productDescription" th:text="${product.description}">
+        </p>
+        <p>
+        </br>
+        </br>
+            Pris: <span th:text="${product.price}"></span> kr
+        </p>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <button>Lägg till i kundvagn</button>
+    </div>
 </body>
 </html>
