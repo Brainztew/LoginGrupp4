@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrera</title>
+
 </head>
 <body>
     <h1>Registrera ny användare!</h1>
@@ -22,9 +23,17 @@
         <input type="text" id="username" name="username"  required><br>
 
         <label for="password">lösenord:</label>
-        <input type="text" id="password" name="password"  required><br>
+        <input type="password" id="password" name="password"  required><br>
+
+        <label for="confirmPassword">bekräfta lösenord:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+        <div th:if="${passwordMismatch}" class="error">Lösenord och bekräfta lösenord stämmer inte överens!
+            <button><a href="/register">Försök igen!</a></button>
+        </div>
 
         <button type="submit">Lägg till användare</button>
     </form>
+    
 </body>
 </html>
