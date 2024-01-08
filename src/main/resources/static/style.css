@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    padding-left: 2rem;
 }
 
 #loginBar {
@@ -24,29 +25,22 @@ body {
     max-width: 300px; 
 }
 .reg {
-    background-color: black;
-    color: gold;
+    background-color: #f0f0f0;
     font-size: 20px;
 }
 
 .error {
-    background-color: black;
+    background-color: #f0f0f0;
     color: red;
     font-size: 40px;
 }
 
 .registerBtn {
     margin: 10px;
-    background-color: rgb(253, 253, 253);
+    background-color: #f0f0f0;
     border: none;
     color: rgb(255, 0, 0);
     font-size: 25px;
     padding: 10px 30px;
     border-radius: 16px;
-}
-
-#registerBody {
-    background-color: black;
-    color: red;
-    padding: 3rem;
 }

@@ -8,6 +8,15 @@
 </head>
 <body id="registerBody">
     <h1>Registrera ny användare!</h1>
+    <div id="loginBar">
+        <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
+        <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
+        <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
+        <div sec:authorize="isAuthenticated()">
+            <p>Användarfunktioner:</p>
+            <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
+        </div>
+    </div>
     <form method="post" th:object="${user}" th:action="@{register/addUser}">
  
         <label class="reg" for="firstname">förnamn:</label>

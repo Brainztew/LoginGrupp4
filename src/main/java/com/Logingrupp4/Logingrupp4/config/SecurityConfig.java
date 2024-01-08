@@ -25,7 +25,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> auth
+        http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> auth
+        .requestMatchers("orders").authenticated()
         .anyRequest().permitAll()
         )
         .userDetailsService(jpaUserDetailsService)

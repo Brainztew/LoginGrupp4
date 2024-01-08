@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beskrivning</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <h1>Detaljerad beskrivning!</h1>
     <div id="loginBar">
         <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
         <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
-        <a th:href="@{/orders}"><button id="cartBtn">Kundvagn</button></a>
         <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
+        <div sec:authorize="isAuthenticated()">
+            <p>Användarfunktioner:</p>
+            <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
+        </div>
     </div>
     <div id="product">
         <img th:src="${product.image}" alt="Product Image">
