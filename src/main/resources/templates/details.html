@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="loginBar">
-        <button id="loginBtn">Logga in</button>
-        <button id="registerBtn">Registrera</button>
-        <button id="cartBtn">Kundvagn</button>
-        <button id="homeBtn">Hem</button>
+        <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
+        <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
+        <a th:href="@{/orders}"><button id="cartBtn">Kundvagn</button></a>
+        <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
     </div>
     <div id="product">
         <img th:src="${product.image}" alt="Product Image">

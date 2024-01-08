@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Logingrupp4.Logingrupp4.model.Product;
 import com.Logingrupp4.Logingrupp4.repositories.ProductRepository;
@@ -17,8 +18,8 @@ public class ProductController {
     private ProductRepository productRepository;
 
     @GetMapping()
-    public String details(Model model) {
-        Product product = productRepository.findById(1).orElse(null);
+    public String details(@RequestParam("productId")int productId, Model model) {
+        Product product = productRepository.findById(productId).orElse(null);
 
         model.addAttribute("product", product);
         
