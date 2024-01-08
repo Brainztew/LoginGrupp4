@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrera</title>
-
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body id="registerBody">
     <h1>Registrera ny användare!</h1>
     <form method="post" th:object="${user}" th:action="@{register/addUser}">
  
-        <label for="firstname">förnamn:</label>
+        <label class="reg" for="firstname">förnamn:</label>
         <input type="text" id="firstname" name="firstname"  required><br>
 
-        <label for="lastname">efternamn:</label>
+        <label class="reg" for="lastname">efternamn:</label>
         <input type="text" id="lastname" name="lastname"  required><br>
 
-        <label for="email">email:</label>
+        <label class="reg" for="email">email:</label>
         <input type="text" id="email" name="email"  required><br>
 
-        <label for="username">användarnamn:</label>
+        <label class="reg" for="username">användarnamn:</label>
         <input type="text" id="username" name="username"  required><br>
 
-        <label for="password">lösenord:</label>
+        <label class="reg" for="password">lösenord:</label>
         <input type="password" id="password" name="password"  required><br>
 
-        <label for="confirmPassword">bekräfta lösenord:</label>
+        <label class="reg" for="confirmPassword">bekräfta lösenord:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required><br>
 
         <div th:if="${passwordMismatch}" class="error">Lösenord och bekräfta lösenord stämmer inte överens!
-            <button><a href="/register">Försök igen!</a></button>
+            <button class="registerBtn"><a href="/register">Försök igen!</a></button>
         </div>
 
-        <button type="submit">Lägg till användare</button>
+        <button  class="registerBtn" type="submit">Lägg till användare</button>
     </form>
     
 </body>
