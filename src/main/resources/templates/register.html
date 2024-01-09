@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrera</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body id="registerBody">
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body id="registerBody">
     <h1>Registrera ny användare!</h1>
     <div id="loginBar">
+      <span th:if="${#authorization.expression('isAuthenticated()')}">
+        <a th:href="@{/logout}"><button id="loginBtn">Logga ut</button></a>
+      </span>
+      <span th:unless="${#authorization.expression('isAuthenticated()')}">
         <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
-        <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
-        <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
-        <div sec:authorize="isAuthenticated()">
-            <p>Användarfunktioner:</p>
-            <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
-        </div>
+      </span>
+      <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
+      <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
+      <div sec:authorize="isAuthenticated()">
+        <p>Användarfunktioner:</p>
+        <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
+      </div>
     </div>
     <form method="post" th:object="${user}" th:action="@{register/addUser}">
- 
-        <label class="reg" for="firstname">förnamn:</label>
-        <input type="text" id="firstname" name="firstname"  required><br>
+      <label class="reg" for="firstname">förnamn:</label>
+      <input type="text" id="firstname" name="firstname" required /><br />
 
-        <label class="reg" for="lastname">efternamn:</label>
-        <input type="text" id="lastname" name="lastname"  required><br>
+      <label class="reg" for="lastname">efternamn:</label>
+      <input type="text" id="lastname" name="lastname" required /><br />
 
-        <label class="reg" for="email">email:</label>
-        <input type="text" id="email" name="email"  required><br>
+      <label class="reg" for="email">email:</label>
+      <input type="text" id="email" name="email" required /><br />
 
-        <label class="reg" for="username">användarnamn:</label>
-        <input type="text" id="username" name="username"  required><br>
+      <label class="reg" for="username">användarnamn:</label>
+      <input type="text" id="username" name="username" required /><br />
 
-        <label class="reg" for="password">lösenord:</label>
-        <input type="password" id="password" name="password"  required><br>
+      <label class="reg" for="password">lösenord:</label>
+      <input type="password" id="password" name="password" required /><br />
 
-        <label class="reg" for="confirmPassword">bekräfta lösenord:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+      <label class="reg" for="confirmPassword">bekräfta lösenord:</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        required
+      /><br />
 
-        <div th:if="${passwordMismatch}" class="error">Lösenord och bekräfta lösenord stämmer inte överens!
-            <button class="registerBtn"><a href="/register">Försök igen!</a></button>
-        </div>
+      <div th:if="${passwordMismatch}" class="error">
+        Lösenord och bekräfta lösenord stämmer inte överens!
+        <button class="registerBtn">
+          <a href="/register">Försök igen!</a>
+        </button>
+      </div>
 
-        <button  class="registerBtn" type="submit">Lägg till användare</button>
+      <button class="registerBtn" type="submit">Lägg till användare</button>
     </form>
-    
-</body>
+  </body>
 </html>

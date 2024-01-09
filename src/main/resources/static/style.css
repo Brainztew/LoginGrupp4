@@ -1,46 +1,56 @@
 body {
-    margin: 0;
-    padding: 0;
-    padding-left: 2rem;
+  margin: 0;
+  padding: 0;
+  padding-left: 2rem;
 }
 
 #loginBar {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: left;
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
 }
 
 #product {
-    display: flex;
+  display: flex;
 }
 
 #product img {
-    width: 700px;
-    height: 500px;
-    margin-right: 20px; 
+  width: 700px;
+  height: 500px;
+  margin-right: 20px;
 }
 
 #productDescription {
-    text-align: right;
-    max-width: 300px; 
+  text-align: right;
+  max-width: 300px;
 }
 .reg {
-    background-color: #f0f0f0;
-    font-size: 20px;
+  background-color: #f0f0f0;
+  font-size: 20px;
 }
 
 .error {
-    background-color: #f0f0f0;
-    color: red;
-    font-size: 40px;
+  background-color: #f0f0f0;
+  color: red;
+  font-size: 40px;
 }
 
 .registerBtn {
-    margin: 10px;
-    background-color: #f0f0f0;
-    border: none;
-    color: rgb(255, 0, 0);
-    font-size: 25px;
-    padding: 10px 30px;
-    border-radius: 16px;
+  margin: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  color: rgb(255, 0, 0);
+  font-size: 25px;
+  padding: 10px 30px;
+  border-radius: 16px;
+}
+
+#productcontainer {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.container {
+  border: 1px solid;
 }
