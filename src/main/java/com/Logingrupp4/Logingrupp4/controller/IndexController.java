@@ -22,15 +22,7 @@ public class IndexController {
 
     @GetMapping()
     public String startPage(Model model) {
-        List<Product> productsList = new ArrayList<>();
-
-        for (int i = 1; i <= 6; i++) {
-            Product products = productRepository.findById(i).orElse(null);
-            if (products != null) {
-                productsList.add(products);
-            }
-        }
-        
+        Iterable<Product> productsList = productRepository.findAll();
         model.addAttribute("products", productsList);
         return "index";
     }

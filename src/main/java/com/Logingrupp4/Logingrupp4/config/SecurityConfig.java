@@ -30,7 +30,12 @@ public class SecurityConfig {
         .anyRequest().permitAll()
         )
         .userDetailsService(jpaUserDetailsService)
-        .formLogin(Customizer.withDefaults());
+        .formLogin(Customizer.withDefaults())
+        .logout(logout -> logout
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID"));
         return http.build();
     }
     
