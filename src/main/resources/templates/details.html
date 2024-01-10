@@ -23,16 +23,13 @@
       </div>
     </div>
     <div id="product">
-        <img th:src="${product.image}" alt="Product Image">
-        <p id="productDescription" th:text="${product.description}">
-        </p>
-        <p>
-        </br>
-        </br>
-            Pris: <span th:text="${product.price}"></span> kr
-        </p>
+      <img th:src="${product.image}" alt="Product Image">
+      <p id="productDescription" th:text="${product.description}"></p>
+      <div>
+          <p>Pris: <span th:text="${product.price}"></span> kr</p>
+      </div>
     </div>
-    <div sec:authorize="isAuthenticated()">
+    <div id="cart" sec:authorize="isAuthenticated()">
         <button class="otherBtn">Lägg till i kundvagn</button>
     </div>
 </body>

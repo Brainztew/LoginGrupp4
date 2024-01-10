@@ -27,9 +27,9 @@
         <h2 th:text="${product.name}"></h2>
         <img th:src="${product.image}" width="200" />
         <h3>Pris</h3>
-        <p th:text="${product.price}"></p>
+        <p><span th:text="${product.price}"></span> kr</p>
         <a th:href="@{/details(productId=${product.id})}">
-          <button class="otherBtn">More Details</button>
+          <button class="otherBtn">Mer detaljer</button>
         </a>
       </div>
     </div>
