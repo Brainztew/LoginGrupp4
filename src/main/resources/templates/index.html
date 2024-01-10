@@ -10,16 +10,16 @@
     <h1>Startsidan</h1>
     <div id="loginBar">
       <span th:if="${#authorization.expression('isAuthenticated()')}">
-        <a th:href="@{/logout}"><button id="loginBtn">Logga ut</button></a>
+        <a th:href="@{/logout}"><button class="otherBtn">Logga ut</button></a>
       </span>
       <span th:unless="${#authorization.expression('isAuthenticated()')}">
-        <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
+        <a th:href="@{/login}"><button class="otherBtn">Logga in</button></a>
       </span>
-      <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
-      <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
+      <a th:href="@{/register}"><button class="otherBtn">Registrera</button></a>
+      <a th:href="@{/}"><button class="otherBtn">Hem</button></a>
       <div sec:authorize="isAuthenticated()">
-        <p>Användarfunktioner:</p>
-        <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
+        <p class="userFunc">Användarfunktioner:</p>
+        <a th:href="@{/orders}"><button class="otherBtn">Mina ordrar</button></a>
       </div>
     </div>
     <div id="productcontainer">
@@ -29,7 +29,7 @@
         <h3>Pris</h3>
         <p th:text="${product.price}"></p>
         <a th:href="@{/details(productId=${product.id})}">
-          <button>More Details</button>
+          <button class="otherBtn">More Details</button>
         </a>
       </div>
     </div>

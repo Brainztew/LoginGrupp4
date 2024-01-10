@@ -10,35 +10,41 @@
     <h1>Registrera ny användare!</h1>
     <div id="loginBar">
       <span th:if="${#authorization.expression('isAuthenticated()')}">
-        <a th:href="@{/logout}"><button id="loginBtn">Logga ut</button></a>
+        <a th:href="@{/logout}"><button class="otherBtn">Logga ut</button></a>
       </span>
       <span th:unless="${#authorization.expression('isAuthenticated()')}">
-        <a th:href="@{/login}"><button id="loginBtn">Logga in</button></a>
+        <a th:href="@{/login}"><button class="otherBtn">Logga in</button></a>
       </span>
-      <a th:href="@{/register}"><button id="registerBtn">Registrera</button></a>
-      <a th:href="@{/}"><button id="homeBtn">Hem</button></a>
+      <a th:href="@{/register}"><button class="otherBtn">Registrera</button></a>
+      <a th:href="@{/}"><button class="otherBtn">Hem</button></a>
       <div sec:authorize="isAuthenticated()">
-        <p>Användarfunktioner:</p>
-        <a th:href="@{/orders}"><button id="cartBtn">Mina ordrar</button></a>
+        <p class="userFunc">Användarfunktioner:</p>
+        <a th:href="@{/orders}"><button class="otherBtn">Mina ordrar</button></a>
       </div>
     </div>
     <form method="post" th:object="${user}" th:action="@{register/addUser}">
-      <label class="reg" for="firstname">förnamn:</label>
+      <p class="regText">Förnamn:</p>
+      <label class="reg" for="firstname"></label>
       <input type="text" id="firstname" name="firstname" required /><br />
 
-      <label class="reg" for="lastname">efternamn:</label>
+      <p class="regText">Efternamn:</p>
+      <label class="reg" for="lastname"></label>
       <input type="text" id="lastname" name="lastname" required /><br />
 
-      <label class="reg" for="email">email:</label>
+      <p class="regText">Email:</p>
+      <label class="reg" for="email"></label>
       <input type="text" id="email" name="email" required /><br />
 
-      <label class="reg" for="username">användarnamn:</label>
+      <p class="regText">Användarnamn:</p>
+      <label class="reg" for="username"></label>
       <input type="text" id="username" name="username" required /><br />
 
-      <label class="reg" for="password">lösenord:</label>
+      <p class="regText">Lösenord:</p>
+      <label class="reg" for="password"></label>
       <input type="password" id="password" name="password" required /><br />
 
-      <label class="reg" for="confirmPassword">bekräfta lösenord:</label>
+      <p class="regText">Bekräfta lösenord:</p>
+      <label class="reg" for="confirmPassword"></label>
       <input
         type="password"
         id="confirmPassword"
