@@ -26,18 +26,31 @@ body {
 
 #product {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #product img {
   width: 700px;
-  height: 500px;
-  margin-right: 20px;
+  margin-bottom: 10px;
+  
 }
 
 #productDescription {
-  text-align: right;
-  max-width: 300px;
+  margin-top: 25px; 
+  text-align: center;
 }
+
+#product p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+#cart {
+  text-align: center;
+}
+
 .reg {
   background-color: #f0f0f0;
   font-size: 20px;
@@ -78,6 +91,14 @@ body {
   font-size: 15px;
   padding: 8px 16px;
   border-radius: 10px;
+}
+
+.otherBtn:hover {background-color: #c7c69a}
+
+.otherBtn:active {
+  background-color: #c7c69a;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
 }
 
 #productcontainer {
