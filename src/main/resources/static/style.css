@@ -83,6 +83,14 @@ body {
   border-radius: 16px;
 }
 
+.registerBtn:hover {background-color: #c7c69a}
+
+.registerBtn:active {
+  background-color: #c7c69a;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
 .otherBtn {
   margin: 10px;
   background-color: #ffba7d;
